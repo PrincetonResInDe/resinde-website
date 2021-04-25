@@ -31,7 +31,7 @@ const Item = props => {
           width: "100%",
           height: "75%",
           borderRadius: "25px",
-          backgroundColor: "black",
+          backgroundColor: "#0148e8",
         }}
       />
       <ItemDetails>

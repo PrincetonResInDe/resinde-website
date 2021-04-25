@@ -95,6 +95,9 @@ const AboutPage = () => {
           }
         }
       }
+      cstLogo: file(relativePath: { eq: "cst-logo.svg" }) {
+        publicURL
+      }
     }
   `)
 
@@ -164,6 +167,20 @@ const AboutPage = () => {
                 <Img fixed={data.tigerLaunchLogo.childImageSharp.fixed} />
               </a>
               <ReactTooltip id="tiger-launch" place="top">
+                Tiger Launch
+              </ReactTooltip>
+              <a
+                href="https://cst.princeton.edu/"
+                target="_blank"
+                rel="noreferrer"
+                data-tip
+                data-for="cst"
+              >
+                <img 
+                  src={data.cstLogo.publicURL} 
+                  alt="Council on Science and Technology" />
+              </a>
+              <ReactTooltip id="cst" place="top">
                 Tiger Launch
               </ReactTooltip>
             </StyledLogosDiv>
