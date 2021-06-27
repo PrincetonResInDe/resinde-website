@@ -42,7 +42,7 @@ const Global = createGlobalStyle`
     font-size: 18px;
   }
   header {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Muli", sans-serif;
   }
   body {
     font-family: "Muli", sans-serif;

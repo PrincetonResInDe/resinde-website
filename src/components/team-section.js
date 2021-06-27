@@ -2,7 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import tw, { styled } from "twin.macro"
 import Img from "gatsby-image"
-import { Link } from "gatsby"
+import Button from "../components/button"
 import { SectionTextRight } from "../components/padding"
 
 const StyledH1 = styled.h1`
@@ -14,9 +14,6 @@ const StyledDiv = styled.div`
   ${tw`flex`}
 `
 
-const StyledButton = styled(props => <Link {...props} />)`
-  ${tw`border border-magenta rounded-full text-magenta py-2 px-8 uppercase hover:bg-magenta hover:text-white transition`}
-`
 const CenteredP = styled.p`
   ${tw`text-center`}
 `
@@ -50,7 +47,9 @@ const TeamSection = props => {
           backgrounds, and interests. After all, diversity encourages
           creativity!
         </CenteredP>
-        <StyledButton to="/team">meet the team</StyledButton>
+        <Button to="/team" magenta="true">
+          meet the team
+        </Button>
       </SectionTextRight>
     </StyledDiv>
   )

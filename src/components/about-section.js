@@ -4,6 +4,7 @@ import tw, { styled } from "twin.macro"
 import Img from "gatsby-image"
 import { Link } from "gatsby"
 import { SectionTextRight } from "../components/padding"
+import Button from "../components/button"
 
 const StyledH1 = styled.h1`
   ${tw`mobile:text-black text-white text-7xl items-center absolute mobile:pl-8 pl-48`}
@@ -17,12 +18,6 @@ const StyledP = styled.p`
 const StyledDiv = styled.div`
   ${tw`flex`}
 `
-
-const StyledButton = styled(props => <Link {...props} />)`
-  ${tw`border border-blue rounded-full text-blue py-2 px-8 uppercase hover:text-white
-  hover:bg-blue transition`}
-`
-
 const StyledList = tw.ul`
   list-disc list-inside py-8
 `
@@ -68,7 +63,9 @@ const AboutSection = props => {
           <li>Web Development</li>
         </StyledList>
 
-        <StyledButton to="/about">learn more</StyledButton>
+        <Button to="/about" blue="true">
+          learn more
+        </Button>
       </SectionTextRight>
     </StyledDiv>
   )

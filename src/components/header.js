@@ -6,6 +6,7 @@ import React from "react"
 import Img from "gatsby-image"
 import NavLink from "./navlink"
 import MobileNav from "./mobile-nav"
+import Button from "./button"
 
 const StyledHeader = tw.header`
   pt-2 mobile:px-8 px-20 mobile:static fixed mobile:top-auto top-0 w-full bg-white z-50 bg-opacity-90
@@ -50,9 +51,9 @@ const Header = ({ navLinks }) => {
           {navLinks.map((item, index) => {
             if (item.name === "Contact Us") {
               return (
-                <ActionLink to="/contact" key={item.name}>
+                <Button to="/contact" key={item.name} magenta="true">
                   Contact Us
-                </ActionLink>
+                </Button>
               )
             } else {
               let linkProps = { to: item.link }

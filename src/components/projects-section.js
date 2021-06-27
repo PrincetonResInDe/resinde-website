@@ -2,7 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import tw, { styled } from "twin.macro"
 import Img from "gatsby-image"
-import { Link } from "gatsby"
+import Button from "../components/button"
 import { SectionTextLeft } from "../components/padding"
 
 const StyledH1 = styled.h1`
@@ -16,10 +16,6 @@ const StyledTextDiv = styled.p`
 
 const StyledDiv = styled.div`
   ${tw`flex`}
-`
-
-const StyledButton = styled(props => <Link {...props} />)`
-  ${tw`border border-yellow rounded-full text-yellow py-2 px-8 uppercase hover:bg-yellow hover:text-white transition`}
 `
 
 const StyledA = styled.a`
@@ -72,7 +68,9 @@ const ProjectsSection = props => {
             .
           </div>
         </StyledTextDiv>
-        <StyledButton to="/work">learn more</StyledButton>
+        <Button to="/work" yellow="true">
+          learn more
+        </Button>
       </SectionTextLeft>
       <div id={props.id} style={{ position: "relative" }}>
         <Img fixed={data.blob.childImageSharp.fixed} />
