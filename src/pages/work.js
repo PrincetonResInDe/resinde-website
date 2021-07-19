@@ -1,87 +1,166 @@
-// Please cascade any changes to this file to projects.js and case-studies.js
-
-import React from "react"
+import React, { useState } from "react"
 import tw, { styled } from "twin.macro"
 import { graphql } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-import StyledLink from "../components/styled-link"
 import SEO from "../components/seo"
-import Item from "../components/item"
+import StyledLink from "../components/styled-link"
 import { Padding } from "../components/padding"
 
+const StyledHeaderDiv = tw.div`
+  mt-16 space-y-8
+`
+
+const Heading = tw.h1`
+  leading-none
+`
+
 const PageContainer = styled(Padding)`
-  ${tw`space-y-10 pt-16 mt-32 mobile:mt-6`}
+  ${tw`flex flex-col space-y-14 mt-36 mobile:mt-6`}
 `
 
 const Filters = tw.div`
-  flex flex-row space-x-8 font-bold hidden
+  flex flex-row space-x-8 font-bold
+`
+
+const Filter = styled("p")`
+  position: relative;
+  transition: color 0.3s ease-in-out;
+  &:before {
+    ${props => {
+      if (props.magenta) return tw`bg-magenta`
+      if (props.purple) return tw`bg-purple`
+      if (props.blue) return tw`bg-blue`
+    }}
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    transition-duration: 0.5s;
+  }
+  &:hover:before {
+    visibility: visible;
+    width: 100%;
+  }
+  &:hover {
+    ${props => {
+      if (props.magenta) return tw`text-magenta`
+      if (props.purple) return tw`text-purple`
+      if (props.blue) return tw`text-blue`
+    }}
+  }
 `
 
 const Projects = tw.div`
-  grid grid-cols-2 mobile:grid-cols-1 gap-x-8 gap-y-6
+  grid grid-cols-2 mobile:grid-cols-1 gap-x-8 sm:gap-x-0 gap-y-14
 `
 
-const isPurple = type => {
-  if (type === "Project") return "true"
-}
+const PlaceholderDiv = styled("div")`
+  ${props => {
+    if (props.purple) return tw`bg-purple`
+    if (props.blue) return tw`bg-blue`
+  }}
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 350px;
+  border-radius: 25px;
+  margin-bottom: 15px;
+  color: white;
+  text-align: center;
+`
 
-const isBlue = type => {
-  if (type === "Case Study") return "true"
-}
+const PlaceholderText = styled("h3")`
+  font-size: 36px
+`
 
-const WorkPage = ({ data }) => (
-  <PageContainer>
-    <SEO title="Work" />
-    <h1>Our Work</h1>
-    <Filters>
-      <StyledLink to="/work" magenta="true">
-        All
-      </StyledLink>
-      <StyledLink to="/work/projects" purple="true">
-        Projects
-      </StyledLink>
-      <StyledLink to="/work/case-studies" blue="true">
-        Case Studies
-      </StyledLink>
-    </Filters>
-    <Projects>
-      {data.allMarkdownRemark.edges.map(({ node }) => (
-        <Item
-          key={node.id}
-          link={node.fields.slug}
-          title={node.frontmatter.title}
-          subtitle={node.excerpt}
-          src={node.frontmatter.featuredImage.childImageSharp.fixed}
-          altText={node.frontmatter.featuredImageAlt}
-          purple={isPurple(node.frontmatter.type)}
-          blue={isBlue(node.frontmatter.type)}
-          height="500px"
-        />
-      ))}
-    </Projects>
-  </PageContainer>
+const Placeholder = (props) => (
+  <PlaceholderDiv purple={props.purple} blue={props.blue}>
+    <PlaceholderText>Coming Soon</PlaceholderText>
+  </PlaceholderDiv>
 )
+
+const Project = props => {
+  const project = props.project
+  const isPurple = project.frontmatter.type  === "Project"
+  const isBlue = project.frontmatter.type  === "Case Study"
+
+  return (
+    <div>
+      {project.frontmatter.featuredImg ? 
+        <GatsbyImage
+          image={getImage(project.frontmatter.featuredImage)}
+          alt={project.frontmatter.featuredImageAlt}
+          objectFit="cover"
+          objectPosition="center"
+          backgroundColor={isPurple ? "#7d71f2" : "#0148e8"}
+          style={{
+            height: "350px",
+            borderRadius: "25px",
+            marginBottom: "15px",
+          }}
+        /> : <Placeholder purple={isPurple} blue={isBlue} />
+      }
+      <h3>
+        <StyledLink to={project.fields.slug} purple={isPurple} blue={isBlue}>
+          {project.frontmatter.title}
+        </StyledLink>
+      </h3>
+      <p>{props.project.excerpt}</p>
+    </div>
+  )
+}
+
+const WorkPage = ({ data }) => {
+  const all = data.all.edges
+  const [edges, setEdges] = useState(all)
+  const projects = all.filter(edge => edge.node.frontmatter.type === "Project")
+  const caseStudies = all.filter(edge => edge.node.frontmatter.type === "Case Study")
+
+  return (
+    <PageContainer>
+      <SEO title="Work" />
+      <StyledHeaderDiv>
+        <Heading>Our Work</Heading>
+        <Filters>
+        <Filter magenta="true" onClick={() => setEdges(all)}>
+          All
+        </Filter>
+        <Filter purple="true" onClick={() => setEdges(projects)}>
+          Projects
+        </Filter>
+        <Filter blue="true" onClick={() => setEdges(caseStudies)}>
+          Case Studies
+        </Filter>
+      </Filters>
+      </StyledHeaderDiv>
+      <Projects>
+        {edges.map(({ node }) => <Project project={node} />)}
+      </Projects>
+    </PageContainer>
+  )
+}
 
 export default WorkPage
 
 export const query = graphql`
   query {
-    allMarkdownRemark(
+    all: allMarkdownRemark (
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { fileAbsolutePath: { regex: "/(markdown-pages/projects)/" } }
     ) {
       edges {
         node {
-          id
           frontmatter {
             title
-            date(formatString: "DD MMMM, YYYY")
             type
             featuredImage {
               childImageSharp {
-                fixed(height: 500) {
-                  ...GatsbyImageSharpFixed
-                }
+                gatsbyImageData(height: 500)
               }
             }
           }
