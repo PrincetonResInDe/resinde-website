@@ -20,7 +20,7 @@ const PageContainer = styled(Padding)`
 `
 
 const Filters = tw.div`
-  flex flex-row space-x-8 font-bold
+  flex flex-row space-x-8 font-bold hidden
 `
 
 const Filter = styled("p")`
@@ -106,7 +106,8 @@ const Project = props => {
         /> : <Placeholder purple={isPurple} blue={isBlue} />
       }
       <h3>
-        <StyledLink to={project.fields.slug} purple={isPurple} blue={isBlue}>
+      {/* Add back to={project.fields.slug} after project details done */}
+        <StyledLink  purple={isPurple} blue={isBlue}>
           {project.frontmatter.title}
         </StyledLink>
       </h3>
