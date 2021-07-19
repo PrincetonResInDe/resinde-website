@@ -1,0 +1,134 @@
+[
+  {
+    "name": "Ashley To",
+    "role": "Co-Founder",
+    "imgPath": "../../images/headshots/ashley.png",
+    "imgAlt": " "
+  },
+  {
+    "name": "Jacqueline Xu",
+    "role": "Co-Founder",
+    "imgPath": "../../images/headshots/jackie.png",
+    "imgAlt": " "
+  },
+  {
+    "name": "Manasseh Alexander",
+    "role": "Co-Director of Design",
+    "imgPath": "../../images/headshots/manasseh.png",
+    "imgAlt": " "
+  },
+  {
+    "name": "Audrey Laude",
+    "role": "Co-Director of Design",
+    "imgPath": "../../images/headshots/audrey.png",
+    "imgAlt": " "
+  },
+  {
+    "name": "Kyra Acquah",
+    "role": "Co-Director of Development",
+    "imgPath": "../../images/headshots/kyra.png",
+    "imgAlt": " "
+  },
+  {
+    "name": "Joanna Kuo",
+    "role": "Co-Director of Development",
+    "imgPath": "../../images/headshots/joanna.png",
+    "imgAlt": " "
+  },
+  {
+    "name": "Theo Knoll",
+    "role": "Treasurer",
+    "imgPath": "../../images/headshots/theo.png",
+    "imgAlt": " "
+  },
+  {
+    "name": "Thanya Begum",
+    "role": "Marketing Chair",
+    "imgPath": "../../images/headshots/thanya.png",
+    "imgAlt": " "
+  },
+  {
+    "name": "Iroha Shirai",
+    "role": "Marketing Chair",
+    "imgPath": "../../images/headshots/iroha.png",
+    "imgAlt": " "
+  },
+  {
+    "name": "Justin Chae",
+    "role": "Outreach Chair",
+    "imgPath": "../../images/headshots/justin.png",
+    "imgAlt": " "
+  },
+  {
+    "name": "Megan Specht",
+    "role": "Social Chair",
+    "imgPath": "../../images/headshots/megan.png",
+    "imgAlt": " "
+  },
+  {
+    "name": "Jane Castleman",
+    "role": "Team Member",
+    "imgPath": "../../images/headshots/",
+    "imgAlt": " "
+  },
+  {
+    "name": "Catherine Chen",
+    "role": "Team Member",
+    "imgPath": "../../images/headshots/",
+    "imgAlt": " "
+  },
+  {
+    "name": "Liam Esparraguera",
+    "role": "Team Member",
+    "imgPath": "../../images/headshots/liam.png",
+    "imgAlt": " "
+  },
+  {
+    "name": "Nina Onyemeziem",
+    "role": "Team Member",
+    "imgPath": "../../images/headshots/",
+    "imgAlt": " "
+  },
+  {
+    "name": "Begum Ortaoglu",
+    "role": "Team Member",
+    "imgPath": "../../images/headshots/begum.png",
+    "imgAlt": " "
+  },
+  {
+    "name": "Sara Schwartz",
+    "role": "Team Member",
+    "imgPath": "../../images/headshots/sara.png",
+    "imgAlt": " "
+  },
+  {
+    "name": "Brian Tieu",
+    "role": "Team Member",
+    "imgPath": "../../images/headshots/brian.png",
+    "imgAlt": " "
+  },
+  {
+    "name": "Sophie Torres",
+    "role": "Team Member",
+    "imgPath": "../../images/headshots/",
+    "imgAlt": " "
+  },
+  {
+    "name": "Ameya Vaidya",
+    "role": "Team Member",
+    "imgPath": "../../images/headshots/",
+    "imgAlt": " "
+  },
+  {
+    "name": "Howard Yen",
+    "role": "Team Member",
+    "imgPath": "../../images/headshots/howard.png",
+    "imgAlt": " "
+  },
+  {
+    "name": "Barak Nehoran",
+    "role": "Team Member",
+    "imgPath": "../../images/headshots/barak.png",
+    "imgAlt": " "
+  }
+]
