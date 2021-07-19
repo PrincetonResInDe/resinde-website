@@ -75,7 +75,7 @@ const PlaceholderDiv = styled("div")`
 `
 
 const PlaceholderText = styled("h3")`
-  font-size: 36px
+  font-size: 36px;
 `
 
 const Placeholder = (props) => (
