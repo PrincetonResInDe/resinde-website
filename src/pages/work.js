@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import tw, { styled } from "twin.macro"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import Seo from "../components/seo"
@@ -59,6 +59,18 @@ const Projects = tw.div`
   grid grid-cols-2 mobile:grid-cols-1 gap-x-8 sm:gap-x-0 gap-y-14
 `
 
+const CoverLink = styled(props => <Link {...props} />)`
+  &:hover {
+    + h3 a {
+      ${tw`text-purple`}
+      &:before {
+        visibility: visible;
+        width: 100%;
+      }
+    }
+  }
+`
+
 const PlaceholderDiv = styled("div")`
   ${props => {
     if (props.purple) return tw`bg-purple`
@@ -91,25 +103,24 @@ const Project = props => {
 
   return (
     <div>
-      {project.frontmatter.featuredImg ? (
-        <GatsbyImage
-          image={getImage(project.frontmatter.featuredImage)}
-          alt={project.frontmatter.featuredImageAlt}
-          objectFit="cover"
-          objectPosition="center"
-          backgroundColor={isPurple ? "#7d71f2" : "#0148e8"}
-          style={{
-            height: "350px",
-            borderRadius: "25px",
-            marginBottom: "15px",
-          }}
-        />
-      ) : (
-        <Placeholder purple={isPurple} blue={isBlue} />
-      )}
+      <CoverLink to={project.fields.slug}>
+        {project.frontmatter.featuredImg ? 
+          <GatsbyImage
+            image={getImage(project.frontmatter.featuredImage)}
+            alt={project.frontmatter.featuredImageAlt}
+            objectFit="cover"
+            objectPosition="center"
+            backgroundColor={isPurple ? "#7d71f2" : "#0148e8"}
+            style={{
+              height: "350px",
+              borderRadius: "25px",
+              marginBottom: "15px",
+            }}
+          /> : <Placeholder purple={isPurple} blue={isBlue} />
+        }
+      </CoverLink>
       <h3>
-        {/* Add back to={project.fields.slug} after project details done */}
-        <StyledLink purple={isPurple} blue={isBlue}>
+        <StyledLink to={project.fields.slug} purple={isPurple} blue={isBlue}>
           {project.frontmatter.title}
         </StyledLink>
       </h3>
