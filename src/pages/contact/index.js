@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import tw, { styled } from "twin.macro"
-import SEO from "../../components/seo.js"
+import Seo from "../../components/seo.js"
 import { navigate } from "gatsby-link"
 import { graphql, useStaticQuery } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
@@ -101,7 +101,7 @@ const ContactPage = () => {
 
   return (
     <div>
-      <SEO title="Contact Us" />
+      <Seo title="Contact Us" />
       <BackgroundImage Tag="section" fluid={data.bgBlob.childImageSharp.fixed}>
         <Wrapper>
           <h1>Contact Us</h1>

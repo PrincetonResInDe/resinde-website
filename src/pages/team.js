@@ -3,7 +3,7 @@ import tw, { styled } from "twin.macro"
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import StyledLink from "../components/styled-link"
 import { Padding } from "../components/padding"
 
@@ -24,7 +24,7 @@ const Members = tw.div`
   gap-y-14 self-center
 `
 
-const PhotoMember = (props) => {
+const PhotoMember = props => {
   return (
     <div>
       <GatsbyImage
@@ -39,7 +39,9 @@ const PhotoMember = (props) => {
           marginBottom: "10px",
         }}
       />
-      <h3><StyledLink blue="true">{props.member.name}</StyledLink></h3>
+      <h3>
+        <StyledLink blue="true">{props.member.name}</StyledLink>
+      </h3>
       <p>{props.member.role}</p>
     </div>
   )
@@ -48,13 +50,15 @@ const PhotoMember = (props) => {
 const NoPhotoMember = tw.div`
   mb-4
 `
-const NoPhotoMembers = (props) => {
+const NoPhotoMembers = props => {
   return (
     <div>
       {props.noPhotoMembers.map(member => {
         return (
           <NoPhotoMember>
-            <h3><StyledLink blue="true">{member.name}</StyledLink></h3>
+            <h3>
+              <StyledLink blue="true">{member.name}</StyledLink>
+            </h3>
             <p>{member.role}</p>
           </NoPhotoMember>
         )
@@ -68,7 +72,7 @@ const TeamPage = ({ data }) => {
 
   return (
     <PageContainer>
-      <SEO title="Our Team" />
+      <Seo title="Our Team" />
       <StyledHeaderDiv>
         <Heading>Meet The Team</Heading>
       </StyledHeaderDiv>

@@ -3,7 +3,7 @@ import tw, { styled } from "twin.macro"
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import StyledLink from "../components/styled-link"
 import { Padding } from "../components/padding"
 
@@ -78,7 +78,7 @@ const PlaceholderText = styled("h3")`
   font-size: 36px;
 `
 
-const Placeholder = (props) => (
+const Placeholder = props => (
   <PlaceholderDiv purple={props.purple} blue={props.blue}>
     <PlaceholderText>Coming Soon</PlaceholderText>
   </PlaceholderDiv>
@@ -86,12 +86,12 @@ const Placeholder = (props) => (
 
 const Project = props => {
   const project = props.project
-  const isPurple = project.frontmatter.type  === "Project"
-  const isBlue = project.frontmatter.type  === "Case Study"
+  const isPurple = project.frontmatter.type === "Project"
+  const isBlue = project.frontmatter.type === "Case Study"
 
   return (
     <div>
-      {project.frontmatter.featuredImg ? 
+      {project.frontmatter.featuredImg ? (
         <GatsbyImage
           image={getImage(project.frontmatter.featuredImage)}
           alt={project.frontmatter.featuredImageAlt}
@@ -103,11 +103,13 @@ const Project = props => {
             borderRadius: "25px",
             marginBottom: "15px",
           }}
-        /> : <Placeholder purple={isPurple} blue={isBlue} />
-      }
+        />
+      ) : (
+        <Placeholder purple={isPurple} blue={isBlue} />
+      )}
       <h3>
-      {/* Add back to={project.fields.slug} after project details done */}
-        <StyledLink  purple={isPurple} blue={isBlue}>
+        {/* Add back to={project.fields.slug} after project details done */}
+        <StyledLink purple={isPurple} blue={isBlue}>
           {project.frontmatter.title}
         </StyledLink>
       </h3>
@@ -120,27 +122,31 @@ const WorkPage = ({ data }) => {
   const all = data.all.edges
   const [edges, setEdges] = useState(all)
   const projects = all.filter(edge => edge.node.frontmatter.type === "Project")
-  const caseStudies = all.filter(edge => edge.node.frontmatter.type === "Case Study")
+  const caseStudies = all.filter(
+    edge => edge.node.frontmatter.type === "Case Study"
+  )
 
   return (
     <PageContainer>
-      <SEO title="Work" />
+      <Seo title="Work" />
       <StyledHeaderDiv>
         <Heading>Our Work</Heading>
         <Filters>
-        <Filter magenta="true" onClick={() => setEdges(all)}>
-          All
-        </Filter>
-        <Filter purple="true" onClick={() => setEdges(projects)}>
-          Projects
-        </Filter>
-        <Filter blue="true" onClick={() => setEdges(caseStudies)}>
-          Case Studies
-        </Filter>
-      </Filters>
+          <Filter magenta="true" onClick={() => setEdges(all)}>
+            All
+          </Filter>
+          <Filter purple="true" onClick={() => setEdges(projects)}>
+            Projects
+          </Filter>
+          <Filter blue="true" onClick={() => setEdges(caseStudies)}>
+            Case Studies
+          </Filter>
+        </Filters>
       </StyledHeaderDiv>
       <Projects>
-        {edges.map(({ node }) => <Project project={node} />)}
+        {edges.map(({ node }) => (
+          <Project project={node} />
+        ))}
       </Projects>
     </PageContainer>
   )
@@ -150,7 +156,7 @@ export default WorkPage
 
 export const query = graphql`
   query {
-    all: allMarkdownRemark (
+    all: allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { fileAbsolutePath: { regex: "/(markdown-pages/projects)/" } }
     ) {
