@@ -3,6 +3,7 @@ import { styled } from "twin.macro"
 import StyledLink from "./styled-link"
 import Img from "gatsby-image/withIEPolyfill"
 
+
 const ItemContainer = styled(props => <div {...props}></div>)`
   width: 100%;
   height: ${props => props.height};

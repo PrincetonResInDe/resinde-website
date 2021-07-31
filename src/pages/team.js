@@ -1,9 +1,9 @@
 import React from "react"
 import tw, { styled } from "twin.macro"
 import { graphql } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import SEO from "../components/seo"
-import Item from "../components/item"
 import StyledLink from "../components/styled-link"
 import { Padding } from "../components/padding"
 
@@ -19,57 +19,70 @@ const PageContainer = styled(Padding)`
   ${tw`flex flex-col space-y-14 mt-36 mobile:mt-6`}
 `
 
-const People = styled.div`
-  ${tw`grid grid-cols-3 sm:grid-cols-1 lg:grid-cols-2 gap-x-8 self-center`}
+const Members = tw.div`
+  grid grid-cols-3 sm:grid-cols-1 lg:grid-cols-2 gap-x-8 sm:gap-x-0
+  gap-y-14 self-center
 `
 
-const NoPhotoMember = styled.div`
-  ${tw`mb-8`}
+const PhotoMember = (props) => {
+  return (
+    <div>
+      <GatsbyImage
+        image={getImage(props.member.imgPath)}
+        alt={props.member.imgAlt}
+        objectFit="cover"
+        objectPosition="center"
+        backgroundColor="#0148e8"
+        style={{
+          height: "425px",
+          borderRadius: "25px",
+          marginBottom: "10px",
+        }}
+      />
+      <h3><StyledLink blue="true">{props.member.name}</StyledLink></h3>
+      <p>{props.member.role}</p>
+    </div>
+  )
+}
+
+const NoPhotoMember = tw.div`
+  mb-4
 `
+const NoPhotoMembers = (props) => {
+  return (
+    <div>
+      {props.noPhotoMembers.map(member => {
+        return (
+          <NoPhotoMember>
+            <h3><StyledLink blue="true">{member.name}</StyledLink></h3>
+            <p>{member.role}</p>
+          </NoPhotoMember>
+        )
+      })}
+    </div>
+  )
+}
 
 const TeamPage = ({ data }) => {
   let noPhotoMembers = []
+
   return (
     <PageContainer>
       <SEO title="Our Team" />
       <StyledHeaderDiv>
         <Heading>Meet The Team</Heading>
       </StyledHeaderDiv>
-      <People>
-        {data.allMarkdownRemark.edges.map(({ node }) => {
-          if (node.frontmatter.featuredImage) {
-            return (
-              <Item
-                key={node.id}
-                title={node.frontmatter.name}
-                subtitle={node.frontmatter.role}
-                src={node.frontmatter.featuredImage?.childImageSharp.fixed}
-                altText={node.frontmatter.photoAlt}
-                blue="true"
-                height="600px"
-              />
-            )
+      <Members>
+        {data.allMembersJson.edges.map(({ node }) => {
+          if (node.imgPath) {
+            return <PhotoMember member={node} />
           } else {
-            noPhotoMembers = [
-              ...noPhotoMembers,
-              { name: node.frontmatter.name, role: node.frontmatter.role },
-            ]
+            noPhotoMembers.push(node)
             return null
           }
         })}
-        <div>
-          {noPhotoMembers.map(member => {
-            return (
-              <NoPhotoMember>
-                <h3>
-                  <StyledLink blue={true}>{member.name}</StyledLink>
-                </h3>
-                <p>{member.role}</p>
-              </NoPhotoMember>
-            )
-          })}
-        </div>
-      </People>
+        <NoPhotoMembers noPhotoMembers={noPhotoMembers} />
+      </Members>
     </PageContainer>
   )
 }
@@ -78,24 +91,17 @@ export default TeamPage
 
 export const query = graphql`
   query {
-    allMarkdownRemark(
-      sort: { fields: fileAbsolutePath, order: ASC }
-      filter: { fileAbsolutePath: { regex: "/(members)/" } }
-    ) {
+    allMembersJson {
       edges {
         node {
-          id
-          frontmatter {
-            name
-            role
-            featuredImage {
-              childImageSharp {
-                fixed(height: 600) {
-                  ...GatsbyImageSharpFixed
-                }
-              }
+          name
+          role
+          imgPath {
+            childImageSharp {
+              gatsbyImageData(width: 337)
             }
           }
+          imgAlt
         }
       }
     }
