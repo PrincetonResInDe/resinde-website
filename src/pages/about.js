@@ -1,5 +1,5 @@
 import React from "react"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import tw, { styled } from "twin.macro"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
@@ -103,7 +103,7 @@ const AboutPage = () => {
 
   return (
     <div>
-      <SEO title="About" />
+      <Seo title="About" />
       <PageWrapper>
         <StyledHeaderDiv>
           <h1>About Us</h1>
@@ -176,9 +176,10 @@ const AboutPage = () => {
                 data-tip
                 data-for="cst"
               >
-                <img 
-                  src={data.cstLogo.publicURL} 
-                  alt="Council on Science and Technology" />
+                <img
+                  src={data.cstLogo.publicURL}
+                  alt="Council on Science and Technology"
+                />
               </a>
               <ReactTooltip id="cst" place="top">
                 Tiger Launch

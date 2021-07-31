@@ -1,5 +1,5 @@
 import React from "react"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 
 import { graphql } from "gatsby"
 import tw, { styled } from "twin.macro"
@@ -10,6 +10,7 @@ import {
   SectionTextLeft,
   SectionTextRight,
 } from "../components/padding"
+import Button from "../components/button"
 
 const StyledA = styled.a`
   ${tw`text-blue`}
@@ -58,14 +59,6 @@ const NumberedList = tw.ul`
   list-decimal list-inside pl-8 text-lg
 `
 
-const ButtonDiv = styled.div`
-  ${tw`text-center mt-8`}
-`
-
-const StyledButton = styled(props => <Link {...props} />)`
-  ${tw`border border-blue rounded-full text-blue py-2 px-8 uppercase hover:bg-blue hover:text-white transition`}
-`
-
 const StyledLink = styled(props => <Link {...props} />)`
   ${tw`mr-8`}
   position: relative;
@@ -92,7 +85,7 @@ const StyledLink = styled(props => <Link {...props} />)`
 const ForStudentsPage = ({ data }) => {
   return (
     <div>
-      <SEO title="For Students" />
+      <Seo title="For Students" />
       <StyledHeader>
         <h1>For Students</h1>
       </StyledHeader>
@@ -147,22 +140,12 @@ const ForStudentsPage = ({ data }) => {
               <li>Constantly brainstorms new ways to better our communities</li>
               <li>Attends fun social events!</li>
             </StyledList>
-            <StyledP>
-              If you're interested, we'd love to meet you! Come{" "}
-              <StyledA
-                href="https://www.facebook.com/events/1620119328184917/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                join us at our Spring 2021 Open House
-              </StyledA>
-              .
-            </StyledP>
-            <ButtonDiv>
-              <StyledButton to="https://docs.google.com/forms/d/e/1FAIpQLSefvNUo-nYvVbaGatCi5z8URA9WmKqLhjfhBizIxmAj8YtAFQ/viewform">
-                apply today
-              </StyledButton>
-            </ButtonDiv>
+            <Button
+              to="https://docs.google.com/forms/d/e/1FAIpQLSefvNUo-nYvVbaGatCi5z8URA9WmKqLhjfhBizIxmAj8YtAFQ/viewform"
+              blue="true"
+            >
+              apply today
+            </Button>
           </SectionTextRight>
         </StyledDiv>
         <StyledDiv>

@@ -2,7 +2,6 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import tw, { styled } from "twin.macro"
 import Img from "gatsby-image"
-import { Link } from "gatsby"
 import { SectionTextRight } from "../components/padding"
 import Button from "../components/button"
 

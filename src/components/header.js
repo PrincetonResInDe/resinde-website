@@ -1,6 +1,6 @@
 import { Link } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby"
-import tw, { styled } from "twin.macro"
+import tw from "twin.macro"
 import PropTypes from "prop-types"
 import React from "react"
 import Img from "gatsby-image"
@@ -19,9 +19,6 @@ const DesktopNav = tw.div`
   mobile:hidden block  
 `
 
-const ActionLink = styled(props => <Link {...props} />)`
-  ${tw`bg-magenta text-white rounded-lg p-2 hover:bg-opacity-75 transition-colors font-bold`}
-`
 const Header = ({ navLinks }) => {
   const data = useStaticQuery(graphql`
     query LogoQuery {

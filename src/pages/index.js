@@ -4,7 +4,7 @@ import AboutSection from "../components/about-section"
 import ProjectsSection from "../components/projects-section"
 import TeamSection from "../components/team-section"
 import ContactSection from "../components/contact-section"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import HeroSection from "../components/hero"
 import tw from "twin.macro"
 
@@ -14,7 +14,7 @@ const StyledDiv = tw.div`
 
 const IndexPage = () => (
   <div>
-    <SEO title="Home" />
+    <Seo title="Home" />
     <HeroSection goTo="#about-us" />
     <StyledDiv>
       <div style={{ height: "48px" }} id="about-us"></div>

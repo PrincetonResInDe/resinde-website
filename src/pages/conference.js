@@ -2,7 +2,7 @@ import React from "react"
 import tw, { styled } from "twin.macro"
 import { graphql } from "gatsby"
 
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import Img from "gatsby-image/withIEPolyfill"
 
 const PageContainer = styled.div`
@@ -167,7 +167,7 @@ const Logos = tw.div`
 
 const ConferencePage = ({ data }) => (
   <PageContainer>
-    <SEO title="IDEA Conference" />
+    <Seo title="IDEA Conference" />
     <HeaderSection>
       <About>
         <h3 className="idea-heading" style={{ fontWeight: "normal" }}>
