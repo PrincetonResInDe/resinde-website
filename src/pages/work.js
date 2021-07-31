@@ -104,8 +104,8 @@ const Project = props => {
       <CoverLink to={project.fields.slug}>
         {project.frontmatter.featuredImg ? 
           <GatsbyImage
-            image={getImage(project.frontmatter.featuredImage)}
-            alt={project.frontmatter.featuredImageAlt}
+            image={getImage(project.frontmatter.featuredImg)}
+            alt={project.frontmatter.featuredImgAlt}
             objectFit="cover"
             objectPosition="center"
             backgroundColor={isPurple ? "#7d71f2" : "#0148e8"}
@@ -122,7 +122,7 @@ const Project = props => {
           {project.frontmatter.title}
         </StyledLink>
       </h3>
-      <p>{props.project.excerpt}</p>
+      <p>{props.project.frontmatter.tagline}</p>
     </div>
   )
 }
@@ -179,11 +179,11 @@ export const query = graphql`
                 gatsbyImageData(height: 500)
               }
             }
+            tagline
           }
           fields {
             slug
           }
-          excerpt
         }
       }
     }

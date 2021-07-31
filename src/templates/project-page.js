@@ -1,9 +1,18 @@
 import React from "react"
 import { graphql } from "gatsby"
-import tw from "twin.macro"
+import tw, { styled } from "twin.macro"
+import { Padding } from "../components/padding"
 
-const PageContainer = tw.div`
-  mobile:px-8 xl:px-14 px-20 pt-16
+const StyledHeaderDiv = tw.div`
+  mt-16 space-y-8
+`
+
+const Heading = tw.h1`
+  leading-none
+`
+
+const PageContainer = styled(Padding)`
+  ${tw`flex flex-col space-y-14 mt-36 mobile:mt-6`}
 `
 
 const ProjectPage = ({data}) => {
