@@ -60,13 +60,11 @@ const Projects = tw.div`
 `
 
 const CoverLink = styled(props => <Link {...props} />)`
-  &:hover {
-    + h3 a {
-      ${tw`text-purple`}
-      &:before {
-        visibility: visible;
-        width: 100%;
-      }
+  &:hover + h3 a {
+    ${tw`text-purple`}
+    &:before {
+      visibility: visible;
+      width: 100%;
     }
   }
 `
