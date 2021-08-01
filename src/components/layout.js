@@ -32,11 +32,8 @@ const Global = createGlobalStyle`
   h2 {
     font-size: 48px;
   }
-  h3 {
+  h3, h4 {
     font-size: 28px;
-  }
-  h4 {
-    font-size: 21px;
   }
   p {
     font-size: 18px;
