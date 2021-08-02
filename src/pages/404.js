@@ -2,6 +2,11 @@ import React from "react"
 import tw, { styled } from "twin.macro"
 import Seo from "../components/seo"
 import { Link } from "gatsby"
+import Button from "../components/button"
+
+const StyledP = styled.p`
+  ${tw`text-center`}
+`
 
 const StyledLink = styled(props => <Link {...props} />)`
   ${tw`text-blue`}
@@ -14,9 +19,17 @@ const HeroContainer = tw.div`
 const NotFoundPage = () => (
   <HeroContainer>
     <Seo title="404: Not found" />
-    <h1>404: Not Found</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-    <StyledLink to="/">Back to the homepage.</StyledLink>
+    <h1>WHOOPS</h1>
+    <br></br>
+    <StyledP>It seems like we've encountered an error!</StyledP>
+    <br></br>
+    <StyledP>We apologize for that!
+    <br></br>
+    <br></br>
+    <br></br>
+    <Button to="/" blue="true">GO HOME</Button>
+    </StyledP>
+    <br></br>
   </HeroContainer>
 )
 
