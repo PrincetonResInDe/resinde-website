@@ -1,7 +1,14 @@
 import React from "react"
+import tw, { styled, theme } from "twin.macro"
 import { graphql } from "gatsby"
-import tw, { styled } from "twin.macro"
+
 import { Padding } from "../components/padding"
+import Blob1 from "../images/blobs/blob1.svg"
+
+const Blobs = styled.div`
+  svg:nth-child(1) {
+  }
+`
 
 const PageContainer = styled(Padding)`
   ${tw`flex flex-col mt-36 mobile:mt-6`}
@@ -54,11 +61,14 @@ const PageContainer = styled(Padding)`
       width: 800px;
     }
 
-    .body p {
-      ${tw`mb-5`}
-
+    .body {
+      p {
+        ${tw`mb-5`}
+      }
+      
       ul {
         ${tw`mb-0`}
+        margin-top: -0.75rem;
       }
     }
   }
@@ -75,10 +85,16 @@ const PageContainer = styled(Padding)`
 const ProjectPage = ({data}) => {
   const page = data.markdownRemark
   return (
-    <PageContainer dangerouslySetInnerHTML={{ __html: page.html }} />
+    <>
+      <Blob1 
+        fill={theme('colors.blue.DEFAULT')} 
+        style={{ "transform": "rotate(45deg) scaleX(-1)" }}
+      />
+      <PageContainer dangerouslySetInnerHTML={{ __html: page.html }} />
+    </>
   )
 }
-
+ 
 export default ProjectPage
 
 export const query = graphql`

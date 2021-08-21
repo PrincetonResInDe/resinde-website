@@ -94,18 +94,17 @@ const Placeholder = props => (
   </PlaceholderDiv>
 )
 
-const Project = props => {
-  const project = props.project
+const Project = ({ project }) => {
   const isPurple = project.frontmatter.type === "Project"
   const isBlue = project.frontmatter.type === "Case Study"
 
   return (
     <div>
       <CoverLink to={project.fields.slug}>
-        {project.frontmatter.featuredImg ? 
+        {project.frontmatter.featuredImage ? 
           <GatsbyImage
-            image={getImage(project.frontmatter.featuredImg)}
-            alt={project.frontmatter.featuredImgAlt}
+            image={getImage(project.frontmatter.featuredImage)}
+            alt={project.frontmatter.featuredImageAlt}
             objectFit="cover"
             objectPosition="center"
             backgroundColor={isPurple ? "#7d71f2" : "#0148e8"}
@@ -122,7 +121,7 @@ const Project = props => {
           {project.frontmatter.title}
         </StyledLink>
       </h3>
-      <p>{props.project.frontmatter.tagline}</p>
+      <p>{project.frontmatter.tagline}</p>
     </div>
   )
 }
@@ -179,6 +178,7 @@ export const query = graphql`
                 gatsbyImageData(height: 500)
               }
             }
+            featuredImageAlt
             tagline
           }
           fields {
