@@ -5,12 +5,13 @@ type: "Project"
 featuredImage: ../../images/
 featuredImageAlt: ""
 tagline: "Redesigning Tigerbook, Princeton's version of Facebook, with a focus on user experience."
+numOfBlobs: 6
 ---
 
 <header>
   <h1>Tigerbook</h1>
   <p class="description">
-    Tigerbook is a student directory app where upon looking up a student’s name, users can find information on each student. Just two years prior to our team joining the project, Tigerbook had a major update wiping much of its information on students due to privacy concerns among students. Information such as hometowns, room information, and roommates were among the most popular features that were removed. The current version of Tigerbook houses information such as student ID, photo, major, and residential college.
+    Tigerbook is a directory application that allows students to learn more about and to connect with their peers. Tigerbook has stored student information like hometowns, roommates, and dorm room numbers, enabling students to find shared backgrounds and locate one another to drop off care packages. However, in September 2019 a major privacy update where most student information was removed was implemented after many students expressed privacy concerns. With only student names and photos left, Tigerbook lost most of its value as a student resource for social connection, so ResInDe came in with the goal of restoring its initial value while also addressing student concerns. As much of what made Tigerbook so useful was the information it contained, the now bare-bone version of Tigerbook has lost much of its value among students. Our goal was understanding how we can bring back the value to the application. 
   </p>
 </header>
 
@@ -63,33 +64,37 @@ tagline: "Redesigning Tigerbook, Princeton's version of Facebook, with a focus o
 </div>
 
 <section class="problem">
-  <h2>Problem<h2>
-  <h3>How might we provide engaging information & capabilities while addressing privacy concerns?</h3>
+  <h2>Problem</h2>
+  <h3 style="max-width: 850px">How might we provide engaging information & capabilities while balancing privacy concerns?</h3>
 </section>
 
 <section class="solution">
-  <h2>Solution<h2>
-  <h3>Balancing more information with privacy.</h3>
+  <h2>Solution</h2>
+  <h3>Reflecting themes of reliability and connectivity.</h3>
   <div class="body">
     <p>
-      <ul>
-        <li>Include more Princeton-specific information as engagementn</li>
-        <li>Incorporate Opt-in/Opt-out capabilities to balance varying privacy concerns</li>
-        <li>An updated design</li>
-      </ul>
+      Our solution to restore Tigerbook’s core value of allowing students to build and foster connection was to provide student information under an opt-in condition. We also focused on creating a welcoming user experience to reflect its themes of reliability and connectivity.
     </p>
   </div>
 </section>
 
-<section class="featured-img">
-  <img class="imgs-1" src="../../images/" alt=" " />
-</section>
+<figure class="featured-img">
+  <img src="../../images/princeton-courses.png" alt="">
+</figure>
 
 <section class="research">
-  <h2>Research<h2>
+  <h2>Research</h2>
   <h3>Putting faces to names.</h3>
   <div class="imgs-3">
-
+    <figure>
+      <img src="../../images/princeton-courses.png" alt="">
+    </figure>
+    <figure>
+      <img src="../../images/princeton-courses.png" alt="">
+    </figure>
+    <figure>
+      <img src="../../images/princeton-courses.png" alt="">
+    </figure>
   </div>
   <div class="body">
     <p>
@@ -107,10 +112,15 @@ tagline: "Redesigning Tigerbook, Princeton's version of Facebook, with a focus o
 </section>
 
 <section class="ideation">
-  <h2>Ideation<h2>
-  <h3>Not a social network, but a student resource.</h3>
+  <h2>Ideation</h2>
+  <h3 style="max-width: 700px">Not a social network, but a student resource.</h3>
   <div class="imgs-2">
-    
+    <figure>
+      <img src="../../images/princeton-courses.png" alt="">
+    </figure>
+    <figure>
+      <img src="../../images/princeton-courses.png" alt="">
+    </figure>
   </div>
   <div class="body">
     <p>
@@ -120,10 +130,18 @@ tagline: "Redesigning Tigerbook, Princeton's version of Facebook, with a focus o
 </section>
 
 <section class="prototypes">
-  <h2>Prototypes<h2>
+  <h2>Prototypes</h2>
   <h3>Getting the details right.</h3>
   <div class="imgs-3">
-    
+    <figure>
+      <img src="../../images/princeton-courses.png" alt="">
+    </figure>
+    <figure>
+      <img src="../../images/princeton-courses.png" alt="">
+    </figure>
+    <figure>
+      <img src="../../images/princeton-courses.png" alt="">
+    </figure>
   </div>
   <div class="body">
     <p>
@@ -142,7 +160,7 @@ tagline: "Redesigning Tigerbook, Princeton's version of Facebook, with a focus o
 </section>
 
 <section class="reflection">
-  <h2>Reflection<h2>
+  <h2>Reflection</h2>
   <h3>A seemingly simple problem can have many solutions and approaches.</h3>
   <div class="body">
     <p>
