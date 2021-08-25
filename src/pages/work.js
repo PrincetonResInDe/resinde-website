@@ -23,7 +23,7 @@ const Filters = tw.div`
   flex flex-row space-x-8 font-bold hidden
 `
 
-const Filter = styled("p")`
+const Filter = styled.p`
   position: relative;
   transition: color 0.3s ease-in-out;
   &:before {
