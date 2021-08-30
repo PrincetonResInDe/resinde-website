@@ -58,9 +58,15 @@ module.exports = {
         name: `members`,
         path: `${__dirname}/src/data/`,
       },
-      plugins: [
-        `gatsby-transformer-json`
-      ]
+      plugins: [`gatsby-transformer-json`],
+    },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /images/, // See below to configure properly
+        },
+      },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
