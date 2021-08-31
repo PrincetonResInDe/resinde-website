@@ -1,12 +1,8 @@
 import React from "react"
 import tw, { styled } from "twin.macro"
-import { Link } from "gatsby"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
-
-const StyledLink = styled(props => <Link {...props} />)`
-  ${tw`text-blue`}
-`
+import { Padding } from "../../components/padding"
 
 const MagentaBlob = styled(Img)`
   left: -12em;
@@ -16,16 +12,20 @@ const MagentaBlob = styled(Img)`
     left: -60px;
   }
 `
-const Header1 = styled.h1`
-  ${tw`text-white text-7xl absolute pl-48`}
-  top: 300px;
+const Text = styled.h1`
+  ${tw`text-white absolute text-center`}
+  top: 600px;
+  width: 700px;
+`
+const Heading = tw.h1`
+  leading-none
 `
 
-const HeroContainer = tw.div`
-  flex flex-col min-h-screen max-w-max justify-center mobile:px-8 px-48
+const PageContainer = styled(Padding)`
+  ${tw`flex flex-col mt-36 mobile:mt-6`}
 `
 
-const NotFoundPage = () => {
+const ThanksPage = () => {
   const data = useStaticQuery(graphql`
     query {
       pinkBlob: file(relativePath: { eq: "pink-blob.png" }) {
@@ -38,11 +38,15 @@ const NotFoundPage = () => {
     }
   `)
   return (
-  <HeroContainer >
-    <MagentaBlob fixed={data.pinkBlob.childImageSharp.fixed} style={{position: "relative", width: "1025px"}}/>
-    <Header1><br></br>Your inquiry <br></br><br></br> has been <br></br><br></br>received!</Header1>
-  </HeroContainer>
+    <PageContainer>
+      <Heading>Thank You!</Heading>
+      <MagentaBlob
+        fixed={data.pinkBlob.childImageSharp.fixed}
+        style={{ position: "relative", width: "1025px" }}
+      />
+      <Text>Your inquiry has been received!</Text>
+    </PageContainer>
   )
 }
 
-export default NotFoundPage
+export default ThanksPage
