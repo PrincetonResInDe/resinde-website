@@ -13,16 +13,16 @@ const FooterWrapper = tw.div`
   relative text-sm
 `
 const ContentWrapper = tw.div`
-  bg-magenta text-white absolute top-24 px-48 flex justify-between w-full pb-8
+  bg-magenta text-white absolute top-24 px-48 flex justify-between w-full pb-8 mobile:px-8
 `
 const LeftContent = tw.div``
 
 const RightContent = tw.div`
-  flex flex-col text-right w-2/5
+  flex flex-col text-right w-2/5 mobile:w-3/5
 `
 
 const LinksWrapper = tw.div`
-  flex space-x-20
+  flex space-x-20 lg:grid lg:space-x-0 lg:gap-8 lg:grid-cols-2 sm:grid-cols-1
 `
 const PageLinksWrapper = tw.div`
   flex flex-col space-y-2
