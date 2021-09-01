@@ -9,7 +9,8 @@ const StyledButton = styled(props => <Link {...props} />)`
     if (props.magenta) return tw`border-magenta bg-magenta`
     else if (props.purple) return tw`border-purple bg-purple`
     else if (props.blue) return tw`border-blue bg-blue`
-    else return tw`border-yellow bg-yellow`
+    else if (props.yellow) return tw`border-yellow bg-yellow`
+    else return tw`border-white bg-white text-magenta`
   }}
   &:hover {
     ${tw`bg-white border`}
@@ -17,7 +18,8 @@ const StyledButton = styled(props => <Link {...props} />)`
       if (props.magenta) return tw`text-magenta`
       else if (props.purple) return tw`text-purple`
       else if (props.blue) return tw`text-blue`
-      else return tw`text-yellow`
+      else if (props.yellow) return tw`text-yellow`
+      else return tw`bg-magenta text-white`
     }}
   }
 `

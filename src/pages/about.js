@@ -117,7 +117,7 @@ const AboutPage = () => {
             community through user research and digital implementation.
           </p>
         </StyledHeaderDiv>
-        <StyledDiv>
+        <StyledDiv id="services">
           <div style={{ position: "relative", width: "800px" }}>
             <MagentaBlob fixed={data.pinkBlob.childImageSharp.fixed} />
             <Header1>Services</Header1>
@@ -128,7 +128,7 @@ const AboutPage = () => {
             <li>UI/UX Design</li>
           </StyledList>
         </StyledDiv>
-        <StyledDiv>
+        <StyledDiv id="partners">
           <SectionText>
             <StyledLogosDiv>
               <a

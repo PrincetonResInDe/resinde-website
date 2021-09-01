@@ -106,7 +106,7 @@ const ForStudentsPage = ({ data }) => {
             <StyledH1>Human-Centered Design</StyledH1>
           </div>
         </StyledDiv>
-        <StyledDiv>
+        <StyledDiv id="join">
           <div style={{ position: "relative" }}>
             <Img fixed={data.blueBlob.childImageSharp.fixed} />
             <StyledH12>Join Us</StyledH12>
@@ -165,7 +165,7 @@ const ForStudentsPage = ({ data }) => {
               to receive updates about our future events!
             </StyledP>
 
-            <div>
+            <div id="workshops">
               <StyledH2>Past Workshops</StyledH2>
               <StyledList>
                 <li>
@@ -191,7 +191,7 @@ const ForStudentsPage = ({ data }) => {
               </StyledList>
             </div>
           </SectionTextLeft>
-          <div style={{ position: "relative" }}>
+          <div style={{ position: "relative" }} id="events">
             <Img fixed={data.purpleBlob.childImageSharp.fixed} />
             <StyledH1Workshops>ResInDe Events</StyledH1Workshops>
           </div>
