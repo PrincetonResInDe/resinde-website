@@ -10,7 +10,7 @@ import Heart from "../images/heart.svg"
 import Button from "./button"
 
 const FooterWrapper = tw.div`
-  relative text-sm
+  relative text-sm mt-32
 `
 const ContentWrapper = tw.div`
   bg-magenta text-white absolute top-24 px-48 flex justify-between w-full pb-8 mobile:px-8
