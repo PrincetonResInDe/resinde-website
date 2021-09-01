@@ -120,7 +120,13 @@ const Footer = () => {
               straight to your mailbox.
             </div>
             <ButtonDiv>
-              <Button to="">Subscribe</Button>
+              <a
+                href="https://google.us2.list-manage.com/subscribe?u=f742a956f5b0d1eca7c1703e3&id=59b6bf43e4"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button>Subscribe</Button>
+              </a>
             </ButtonDiv>
           </NewsletterDiv>
         </RightContent>
