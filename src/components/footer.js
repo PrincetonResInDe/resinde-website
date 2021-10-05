@@ -68,10 +68,6 @@ const Footer = () => {
             </PageLinksWrapper>
             <PageLinksWrapper>
               <PageTitleLink to="/work">Work</PageTitleLink>
-              <div>Projects</div>
-              <div>Case Studies</div>
-            </PageLinksWrapper>
-            <PageLinksWrapper>
               <PageTitleLink to="/for-students">For Students</PageTitleLink>
               <Link to="/for-students#join">Reasons to Join</Link>
               <Link to="/for-students#events">Upcoming Events</Link>
