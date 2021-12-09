@@ -40,7 +40,7 @@ module.exports = {
         background_color: `#fff`,
         theme_color: `#fff`,
         display: `minimal-ui`,
-        icon: `src/images/resinde-logo-square.png`, // This path is relative to the root of the site.
+        icon: `src/images/logos/resinde-logo-square.png`, // This path is relative to the root of the site.
       },
     },
     {
