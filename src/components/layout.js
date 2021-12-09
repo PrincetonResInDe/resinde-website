@@ -24,24 +24,12 @@ const Global = createGlobalStyle`
   h1, h2, h3, h4, h5, h6 {
     font-family: "Montserrat", sans-serif;
     font-weight: 700;
-    font-size: 32px;
-  }
-  h1 {
-    font-size: 64px;
-  }
-  h2 {
-    font-size: 48px;
-  }
-  h3, h4 {
-    font-size: 28px;
   }
   p {
-    font-size: 18px;
+    font-size: 1.125rem;
+    margin: 1rem 0;
   }
-  header {
-    font-family: "Muli", sans-serif;
-  }
-  body {
+  header, body {
     font-family: "Muli", sans-serif;
   }
   .idea-heading {
