@@ -14,5 +14,37 @@
     "featuredImgAlt": "Landing page of Princeton Courses",
     "tagline": "Rethinking how Princeton students select their courses and plan their four years.",
     "slug": "/work/course-selection"
+  },
+  {
+    "title": "Idea Board",
+    "type": "Project",
+    "featuredImgPath": "../images/projects/",
+    "featuredImgAlt": "",
+    "tagline": "",
+    "slug": "/work/"
+  },
+  {
+    "title": "Room Draw",
+    "type": "Project",
+    "featuredImgPath": "../images/projects/",
+    "featuredImgAlt": "",
+    "tagline": "",
+    "slug": "/work/"
+  },
+  {
+    "title": "WhenIsGood",
+    "type": "Project",
+    "featuredImgPath": "../images/projects/",
+    "featuredImgAlt": "",
+    "tagline": "",
+    "slug": "/work/"
+  },
+  {
+    "title": "Hoagie Design System",
+    "type": "Project",
+    "featuredImgPath": "../images/projects/",
+    "featuredImgAlt": "",
+    "tagline": "",
+    "slug": "/work/"
   }
 ]
