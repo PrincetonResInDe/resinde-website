@@ -18,10 +18,10 @@
   {
     "title": "Idea Board",
     "type": "Project",
-    "featuredImgPath": "../images/projects/",
-    "featuredImgAlt": "",
-    "tagline": "",
-    "slug": "/work/"
+    "featuredImgPath": "../images/projects/idea-board/prototype1.png",
+    "featuredImgAlt": "Early prototype of the idea board",
+    "tagline": "Creating a space for sharing and growing entrepreneurial ideas.",
+    "slug": "/work/idea-board"
   },
   {
     "title": "Room Draw",
