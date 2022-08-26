@@ -1,30 +1,47 @@
 import React from "react"
-import tw, { styled } from "twin.macro"
+import tw, { styled, theme } from "twin.macro"
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { Fade } from "react-awesome-reveal";
 
 import Seo from "../components/seo"
-import StyledLink from "../components/styled-link"
-import { Padding } from "../components/padding"
-
-const StyledHeaderDiv = tw.div`
-  mt-16 space-y-4
-`
-
-const Heading = tw.h1`
-  leading-none
-`
-
-const PageContainer = styled(Padding)`
-  ${tw`flex flex-col space-y-14 mt-36 mobile:mt-6`}
-`
+import { H1, Subtitle, Overline2 } from "../components/typography"
+import { PageContainer, PageHeader } from "../components/containers"
 
 const Members = tw.div`
   grid grid-cols-3 sm:grid-cols-1 lg:grid-cols-2 gap-x-8 sm:gap-x-0
-  gap-y-14 self-center
+  gap-y-14 sm:gap-y-8 self-start
+`
+
+const PhotoMemberDetails = tw.div`
+  text-center sm:text-left
+`
+
+const Name = styled.h2`
+  ${tw`leading-tight mt-5 mb-2`}
+  font-size: 1.75rem;
+
+  @media (max-width: 1023px) {
+    font-size: 1.5rem;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 21px;
+  }
+`
+
+const Role = tw.p`
+  mt-1
 `
 
 const PhotoMember = props => {
+  const colors = [
+    theme("colors.pink.DEFAULT"),
+    theme("colors.yellow.DEFAULT"),
+    theme("colors.blue.DEFAULT"),
+    theme("colors.purple.DEFAULT"),
+  ]
+
   return (
     <div>
       <GatsbyImage
@@ -32,61 +49,73 @@ const PhotoMember = props => {
         alt={props.member.imgAlt}
         objectFit="cover"
         objectPosition="center"
-        backgroundColor="#0148e8"
+        backgroundColor={colors[props.index % 4]}
         style={{
           height: "425px",
-          borderRadius: "25px",
-          marginBottom: "10px",
+          borderRadius: "25px"
         }}
       />
-      <h3>
-        <StyledLink blue="true">{props.member.name}</StyledLink>
-      </h3>
-      <p>{props.member.role}</p>
+      <PhotoMemberDetails>
+        <Name style={{ marginBottom: 0 }}>
+          {props.member.name}
+        </Name>
+        <Role>{props.member.role}</Role>
+      </PhotoMemberDetails>
     </div>
   )
 }
+
+const NoPhotoMembersContainer = tw.div`
+  text-center sm:text-left
+`
 
 const NoPhotoMember = tw.div`
   mb-4
 `
 const NoPhotoMembers = props => {
   return (
-    <div>
+    <NoPhotoMembersContainer>
+      <Overline2>Not Pictured</Overline2>
       {props.noPhotoMembers.map(member => {
         return (
           <NoPhotoMember>
-            <h3>
-              <StyledLink blue="true">{member.name}</StyledLink>
-            </h3>
-            <p>{member.role}</p>
+            <Subtitle style={{ marginBottom: 0 }}>
+              {member.name}
+            </Subtitle>
+            <Role>{member.role}</Role>
           </NoPhotoMember>
         )
       })}
-    </div>
+    </NoPhotoMembersContainer>
   )
 }
 
 const TeamPage = ({ data }) => {
   let noPhotoMembers = []
+  let index = -1;
 
   return (
     <PageContainer>
       <Seo title="Our Team" />
-      <StyledHeaderDiv>
-        <Heading>Meet The Team</Heading>
-      </StyledHeaderDiv>
+      <PageHeader>
+        <Fade direction="up" duration={750} triggerOnce>
+          <H1>Meet The Team</H1>
+        </Fade>
+      </PageHeader>
+      <Fade delay={800} duration={750} triggerOnce>
       <Members>
-        {data.allMembersJson.edges.map(({ node }) => {
-          if (node.imgPath) {
-            return <PhotoMember member={node} />
-          } else {
-            noPhotoMembers.push(node)
-            return null
-          }
-        })}
-        <NoPhotoMembers noPhotoMembers={noPhotoMembers} />
+          {data.allMembersJson.edges.map(({ node }) => {
+            if (node.imgPath) {
+              index++
+              return <PhotoMember member={node} index={index} />
+            } else {
+              noPhotoMembers.push(node)
+              return null
+            }
+          })}
+          <NoPhotoMembers noPhotoMembers={noPhotoMembers} />
       </Members>
+      </Fade>
     </PageContainer>
   )
 }

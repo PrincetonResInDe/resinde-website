@@ -1,42 +1,33 @@
 import React, { useState } from "react"
-import tw, { styled } from "twin.macro"
-import Seo from "../../components/seo.js"
+import tw, { styled, theme } from "twin.macro"
 import { navigate } from "gatsby-link"
-import { graphql, useStaticQuery } from "gatsby"
-import BackgroundImage from "gatsby-background-image"
-import { Padding } from "../../components/padding"
+import { Fade, Slide } from "react-awesome-reveal"
 
-const StyledInput = styled.input`
-  ${tw`rounded-xl my-7 px-6 py-2 block w-full outline-none border-purple border-2`}
-`
-const StyledTextarea = styled.textarea`
-  ${tw`rounded-xl my-5 px-6 py-6 block w-full outline-none border-purple border-2`}
-`
-const StyledWhiteButton = styled.button`
-  ${tw`border border-white rounded-full text-white py-2 px-8
-  uppercase hover:bg-white hover:text-purple transition focus:outline-none`}
-  cursor: none;
+import Seo from "../../components/seo.js"
+import { H1, Body } from "../../components/typography"
+import { PageContainer, PageHeader, Blobs } from "../../components/containers"
+import { SubmitButton } from "../../components/buttons"
+import Blob3 from "../../images/blobs/blob3.svg"
+
+const Form = tw.form`
+  flex flex-col gap-y-4 text-right
 `
 
-const StyledButton = styled.button`
-  ${tw`border border-black rounded-full text-black py-2 px-8
-  uppercase hover:bg-black hover:text-white transition focus:outline-none`}
-  cursor: none;
-`
-const Wrapper = styled(Padding)`
-  ${tw`mt-48`}
-  height: 1100px;
-`
-const StyledForm = styled.form`
-  ${tw`text-right`}
-`
-const WhiteText = styled.div`
-  ${tw`text-black text-2xl font-bold mb-4 py-5`}
+const Label = styled.label`
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
 `
 
-const Center = styled.div`
-  ${tw`text-center`}
-  width: 300px;
+const Input = tw.input`
+  rounded-xl px-5 py-2 block w-full outline-none border-pink border-2
+`
+
+const Textarea = tw.textarea`
+  rounded-xl px-5 py-2 block w-full outline-none border-pink border-2
 `
 
 const encode = data => {
@@ -46,20 +37,6 @@ const encode = data => {
 }
 
 const ContactPage = () => {
-  const data = useStaticQuery(
-    graphql`
-      query {
-        bgBlob: file(relativePath: { eq: "purple-blob-3.png" }) {
-          childImageSharp {
-            fixed(width: 1416) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-      }
-    `
-  )
-
   const [name, setName] = useState({})
   const [email, setEmail] = useState({})
   const [subject, setSubject] = useState({})
@@ -83,95 +60,100 @@ const ContactPage = () => {
       .catch(error => alert(error))
   }
 
-  const handleNameChange = e => {
-    setName({ [e.target.name]: e.target.value })
-  }
-
-  const handleEmailChange = e => {
-    setEmail({ [e.target.name]: e.target.value })
-  }
-
-  const handleSubjectChange = e => {
-    setSubject({ [e.target.name]: e.target.value })
-  }
-
-  const handleMessageChange = e => {
-    setMessage({ [e.target.name]: e.target.value })
-  }
-
   return (
-    <div>
+    <PageContainer>
       <Seo title="Contact Us" />
-      <BackgroundImage Tag="section" fluid={data.bgBlob.childImageSharp.fixed}>
-        <Wrapper>
-          <h1>Contact Us</h1>
-          <p>
-            Interested in working with us or joining us? Shoot us a message
-            below—we're excited to share our passions with you!
-          </p>
-          <StyledForm
-            name="contact"
-            method="post"
-            data-netlify="true"
-            action="/contact/thanks/"
-            onSubmit={handleSubmit}
+      <Blobs>
+        <Slide direction="right" duration={750} triggerOnce>
+          <Blob3
+            fill={theme("colors.pink.DEFAULT")}
+            style={{
+              transform: "rotate(170deg) scale(0.70)",
+              margin: "-3rem 0 0 55vw",
+            }}
+          />
+        </Slide>
+      </Blobs>
+      <PageHeader>
+        <Fade cascade direction="up" duration={750} triggerOnce>
+          <H1>Contact Us</H1>
+          <Body>
+            Interested in working with us or joining ResInDe? Shoot us a message
+            below—we'd love to hear from you!
+          </Body>
+        </Fade>
+      </PageHeader>
+      <Form
+        name="contact"
+        method="post"
+        data-netlify="true"
+        action="/contact/thanks/"
+        onSubmit={handleSubmit}
+      >
+        <Fade cascade direction="up" delay={800} duration={750} triggerOnce>
+          <div>
+            <Label for="name">Name:</Label>
+            <Input
+              placeholder="Name"
+              id="name"
+              type="text"
+              name="name"
+              required
+              onChange={e => {
+                setName({ [e.target.name]: e.target.value })
+              }}
+            />
+          </div>
+          <div>
+            <Label for="email">Email:</Label>
+            <Input
+              placeholder="Email"
+              id="email"
+              type="email"
+              name="email"
+              required
+              onChange={e => {
+                setEmail({ [e.target.name]: e.target.value })
+              }}
+            />
+          </div>
+          <div>
+            <Label for="subject">Subject:</Label>
+            <Input
+              placeholder="Subject"
+              id="subject"
+              type="text"
+              name="subject"
+              required
+              onChange={e => {
+                setSubject({ [e.target.name]: e.target.value })
+              }}
+            />
+          </div>
+          <div>
+            <Label for="message">Message:</Label>
+            <Textarea
+              rows="7"
+              placeholder="Message"
+              id="message"
+              name="message"
+              required
+              onChange={e => {
+                setMessage({ [e.target.name]: e.target.value })
+              }}
+            />
+          </div>
+          <SubmitButton
+            style={{ width: "fit-content" }}
+            pink="true"
+            type="submit"
           >
-            <div>
-              <StyledInput
-                placeholder="Name"
-                type="text"
-                name="name"
-                required
-                onChange={handleNameChange}
-              ></StyledInput>
-            </div>
-            <div>
-              <StyledInput
-                placeholder="Email Address"
-                required
-                type="email"
-                name="email"
-                onChange={handleEmailChange}
-              ></StyledInput>
-            </div>
-            <div>
-              <StyledInput
-                placeholder="Subject"
-                type="text"
-                name="subject"
-                required
-                onChange={handleSubjectChange}
-              ></StyledInput>
-            </div>
-            <div>
-              <StyledTextarea
-                rows="5"
-                placeholder="Message"
-                required
-                name="message"
-                onChange={handleMessageChange}
-              ></StyledTextarea>
-            </div>
-            <div>
-              <StyledWhiteButton type="submit">submit</StyledWhiteButton>
-            </div>
-          </StyledForm>
-          <Center>
-            <WhiteText>
-              Join our mailing list for monthly updates about opportunities and
-              what's going on in ResInDe!
-            </WhiteText>
-            <a
-              href="https://google.us2.list-manage.com/subscribe?u=f742a956f5b0d1eca7c1703e3&id=59b6bf43e4"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <StyledButton>subscribe</StyledButton>
-            </a>
-          </Center>
-        </Wrapper>
-      </BackgroundImage>
-    </div>
+            Submit
+          </SubmitButton>
+        </Fade>
+      </Form>
+    </PageContainer>
   )
 }
+
 export default ContactPage

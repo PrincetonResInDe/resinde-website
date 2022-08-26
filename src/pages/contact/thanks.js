@@ -1,50 +1,40 @@
 import React from "react"
-import tw, { styled } from "twin.macro"
-import Img from "gatsby-image"
-import { useStaticQuery, graphql } from "gatsby"
-import { Padding } from "../../components/padding"
+import tw, { styled, theme } from "twin.macro"
 
-const MagentaBlob = styled(Img)`
-  left: -12em;
-  top: 8em;
-  z-index: -1;
-  @media (max-width: 639px) {
-    left: -60px;
-  }
-`
-const Text = styled.h1`
-  ${tw`text-white absolute text-center`}
-  top: 600px;
-  width: 700px;
-`
-const Heading = tw.h1`
-  leading-none
+import Seo from "../../components/seo.js"
+import { H1, Body } from "../../components/typography"
+import { PageContainer as PageWrapper } from "../../components/containers"
+import { InternalLinkButton } from "../../components/buttons"
+import Blob3 from "../../images/blobs/blob3.svg"
+
+const PageContainer = styled(PageWrapper)`
+  ${tw`flex flex-row items-center gap-12 justify-center`}
 `
 
-const PageContainer = styled(Padding)`
-  ${tw`flex flex-col mt-36 mobile:mt-6`}
+const BlobContainer = tw.div`
+  sm:hidden
 `
 
 const ThanksPage = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      pinkBlob: file(relativePath: { eq: "pink-blob.png" }) {
-        childImageSharp {
-          fixed(width: 1025) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-    }
-  `)
   return (
     <PageContainer>
-      <Heading>Thank You!</Heading>
-      <MagentaBlob
-        fixed={data.pinkBlob.childImageSharp.fixed}
-        style={{ position: "relative", width: "1025px" }}
-      />
-      <Text>Your inquiry has been received!</Text>
+      <Seo title="Thank You" />
+      <div>
+        <H1>Thank You</H1>
+        <Body style={{ marginBottom: "2.5rem" }}>
+          We've recieved your inquiry.
+        </Body>
+        <InternalLinkButton to="/work" pink="true">
+          Check Out Our Work
+        </InternalLinkButton>
+      </div>
+      <BlobContainer>
+        <Blob3
+          fill={theme("colors.pink.DEFAULT")}
+          width={300}
+          style={{ transform: "rotate(45deg)" }}
+        />
+      </BlobContainer>
     </PageContainer>
   )
 }

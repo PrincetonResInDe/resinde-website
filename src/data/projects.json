@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Tigerbook",
+    "type": "Project",
+    "featuredImgPath": "../images/projects/tigerbook/tigerbook.png",
+    "featuredImgAlt": "Landing page of Tigerbook",
+    "tagline": "Redesigning Tigerbook, Princeton's unified directory of undergraduates, with a focus on user experience.",
+    "slug": "/work/tigerbook"
+  },
+  {
+    "title": "Course Selection",
+    "type": "Project",
+    "featuredImgPath": "../images/projects/course-selection/course-selection.png",
+    "featuredImgAlt": "Landing page of Princeton Courses",
+    "tagline": "Rethinking how Princeton students select their courses and plan their four years.",
+    "slug": "/work/course-selection"
+  },
+  {
+    "title": "Idea Board",
+    "type": "Project",
+    "featuredImgPath": "../images/projects/",
+    "featuredImgAlt": "",
+    "tagline": "",
+    "slug": "/work/"
+  },
+  {
+    "title": "Room Draw",
+    "type": "Project",
+    "featuredImgPath": "../images/projects/",
+    "featuredImgAlt": "",
+    "tagline": "",
+    "slug": "/work/"
+  },
+  {
+    "title": "WhenIsGood",
+    "type": "Project",
+    "featuredImgPath": "../images/projects/",
+    "featuredImgAlt": "",
+    "tagline": "",
+    "slug": "/work/"
+  },
+  {
+    "title": "Hoagie Design System",
+    "type": "Project",
+    "featuredImgPath": "../images/projects/",
+    "featuredImgAlt": "",
+    "tagline": "",
+    "slug": "/work/"
+  }
+]

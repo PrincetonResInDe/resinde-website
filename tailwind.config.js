@@ -8,8 +8,8 @@ module.exports = {
       purple: {
         DEFAULT: "#7d71f2",
       },
-      magenta: {
-        DEFAULT: "#f02e65",
+      pink: {
+        DEFAULT: "#f12e65",
       },
       blue: {
         DEFAULT: "#0148e8",

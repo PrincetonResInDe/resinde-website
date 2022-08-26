@@ -1,134 +1,176 @@
 [
   {
-    "name": "Ashley To",
-    "role": "Co-Founder",
-    "imgPath": "../images/headshots/ashley.png",
+    "name": "Jane Castleman",
+    "role": "Co-President",
+    "imgPath": "../images/members/jane.jpg",
     "imgAlt": " "
   },
   {
-    "name": "Jacqueline Xu",
-    "role": "Co-Founder",
-    "imgPath": "../images/headshots/jackie.png",
-    "imgAlt": " "
-  },
-  {
-    "name": "Manasseh Alexander",
-    "role": "Co-Director of Design",
-    "imgPath": "../images/headshots/manasseh.png",
-    "imgAlt": " "
-  },
-  {
-    "name": "Audrey Laude",
-    "role": "Co-Director of Design",
-    "imgPath": "../images/headshots/audrey.png",
-    "imgAlt": " "
-  },
-  {
-    "name": "Kyra Acquah",
-    "role": "Co-Director of Development",
-    "imgPath": "../images/headshots/kyra.png",
-    "imgAlt": " "
-  },
-  {
-    "name": "Joanna Kuo",
-    "role": "Co-Director of Development",
-    "imgPath": "../images/headshots/joanna.png",
-    "imgAlt": " "
-  },
-  {
-    "name": "Theo Knoll",
-    "role": "Treasurer",
-    "imgPath": "../images/headshots/theo.png",
-    "imgAlt": " "
-  },
-  {
-    "name": "Thanya Begum",
-    "role": "Marketing Chair",
-    "imgPath": "../images/headshots/thanya.png",
-    "imgAlt": " "
-  },
-  {
-    "name": "Iroha Shirai",
-    "role": "Marketing Chair",
-    "imgPath": "../images/headshots/iroha.png",
-    "imgAlt": " "
-  },
-  {
-    "name": "Justin Chae",
-    "role": "Outreach Chair",
-    "imgPath": "../images/headshots/justin.png",
+    "name": "Katie McLaughlin",
+    "role": "Co-President",
+    "imgPath": "../images/members/katie.jpg",
     "imgAlt": " "
   },
   {
     "name": "Megan Specht",
-    "role": "Social Chair",
-    "imgPath": "../images/headshots/megan.png",
+    "role": "Co-Director of Design",
+    "imgPath": "../images/members/megan.jpg",
     "imgAlt": " "
   },
   {
-    "name": "Jane Castleman",
-    "role": "Team Member",
-    "imgPath": "../images/headshots/",
-    "imgAlt": " "
-  },
-  {
-    "name": "Catherine Chen",
-    "role": "Team Member",
-    "imgPath": "../images/headshots/",
+    "name": "Rebecca Zhu",
+    "role": "Co-Director of Design",
+    "imgPath": "../images/members/rebecca.jpg",
     "imgAlt": " "
   },
   {
     "name": "Liam Esparraguera",
-    "role": "Team Member",
-    "imgPath": "../images/headshots/liam.png",
+    "role": "Co-Director of Development",
+    "imgPath": "../images/members/liam.jpg",
     "imgAlt": " "
   },
   {
-    "name": "Nina Onyemeziem",
+    "name": "Leo Stepanewk",
+    "role": "Co-Director of Development",
+    "imgPath": "../images/members/leo.jpg",
+    "imgAlt": " "
+  },
+  {
+    "name": "Erin Lee",
+    "role": "Treasurer",
+    "imgPath": "../images/members/erin.jpg",
+    "imgAlt": " "
+  },
+  {
+    "name": "Catherine Chen",
+    "role": "Marketing Co-Chair",
+    "imgPath": "../images/members/catherine.jpg",
+    "imgAlt": " "
+  },
+  {
+    "name": "Warren Quan",
+    "role": "Marketing Co-Chair",
+    "imgPath": "../images/members/",
+    "imgAlt": " "
+  },
+  {
+    "name": "Aaliyah Sayed",
+    "role": "Outreach Chair",
+    "imgPath": "../images/members/aaliyah.jpg",
+    "imgAlt": " "
+  },
+  {
+    "name": "Theo Knoll",
     "role": "Team Member",
-    "imgPath": "../images/headshots/",
+    "imgPath": "../images/members/theo.jpg",
+    "imgAlt": " "
+  },
+  {
+    "name": "Joanna Kuo",
+    "role": "Team Member",
+    "imgPath": "../images/members/joanna.jpg",
     "imgAlt": " "
   },
   {
     "name": "Begum Ortaoglu",
     "role": "Team Member",
-    "imgPath": "../images/headshots/begum.png",
+    "imgPath": "../images/members/begum.jpg",
+    "imgAlt": " "
+  },
+  {
+    "name": "Vani Pandian",
+    "role": "Team Member",
+    "imgPath": "../images/members/vani.jpg",
     "imgAlt": " "
   },
   {
     "name": "Sara Schwartz",
     "role": "Team Member",
-    "imgPath": "../images/headshots/sara.png",
+    "imgPath": "../images/members/",
     "imgAlt": " "
   },
   {
-    "name": "Brian Tieu",
+    "name": "Iroha Shirai",
     "role": "Team Member",
-    "imgPath": "../images/headshots/brian.png",
+    "imgPath": "../images/members/iroha.jpg",
     "imgAlt": " "
   },
   {
-    "name": "Sophie Torres",
+    "name": "Jayson Wu",
     "role": "Team Member",
-    "imgPath": "../images/headshots/",
+    "imgPath": "../images/members/jayson.jpg",
     "imgAlt": " "
   },
   {
-    "name": "Ameya Vaidya",
-    "role": "Team Member",
-    "imgPath": "../images/headshots/",
+    "name": "Jacqueline Xu",
+    "role": "Co-Founder",
+    "imgPath": "../images/members/jackie.jpg",
     "imgAlt": " "
   },
   {
     "name": "Howard Yen",
     "role": "Team Member",
-    "imgPath": "../images/headshots/howard.png",
+    "imgPath": "../images/members/howard.jpg",
     "imgAlt": " "
   },
   {
     "name": "Barak Nehoran",
     "role": "Team Member",
-    "imgPath": "../images/headshots/barak.png",
+    "imgPath": "../images/members/",
+    "imgAlt": " "
+  },
+  {
+    "name": "Kyra Acquah",
+    "role": "Team Member",
+    "imgPath": "../images/members/kyra.jpg",
+    "imgAlt": " "
+  },
+  {
+    "name": "Thanya Begum",
+    "role": "Team Member",
+    "imgPath": "../images/members/thanya.jpg",
+    "imgAlt": " "
+  },
+  {
+    "name": "Justin Chae",
+    "role": "Team Member",
+    "imgPath": "../images/members/justin.jpg",
+    "imgAlt": " "
+  },
+  {
+    "name": "Chloe Chen",
+    "role": "Team Member",
+    "imgPath": "../images/members/chloe.jpg",
+    "imgAlt": " "
+  },
+  {
+    "name": "Audrey Laude",
+    "role": "Team Member",
+    "imgPath": "../images/members/audrey.jpg",
+    "imgAlt": " "
+  },
+  {
+    "name": "Brian Tieu",
+    "role": "Team Member",
+    "imgPath": "../images/members/brian.jpg",
+    "imgAlt": " "
+  },
+  {
+    "name": "Ashley To",
+    "role": "Co-Founder",
+    "imgPath": "../images/members/ashley.jpg",
+    "imgAlt": " "
+  },
+  {
+    "name": "Ameya Vaidya",
+    "role": "Team Member",
+    "imgPath": "../images/members/",
+    "imgAlt": " "
+  },
+  {
+    "name": "Ryan Xia",
+    "role": "Team Member",
+    "imgPath": "../images/members/ryan.jpg",
     "imgAlt": " "
   }
 ]

@@ -1,6 +1,6 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
-    <img alt="ResInDe" src="src/images/resinde-logo-square.png" width="60" />
+    <img alt="ResInDe" src="src/images/logos/resinde-logo-square.png" width="60" />
 </p>
 <h1 align="center">
   ResInDe Website

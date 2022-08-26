@@ -1,18 +1,22 @@
-import { Link } from "gatsby"
-import { useStaticQuery, graphql } from "gatsby"
-import tw from "twin.macro"
-import PropTypes from "prop-types"
 import React from "react"
-import Img from "gatsby-image"
-import NavLink from "./navlink"
-import MobileNav from "./mobile-nav"
-import Button from "./button"
+import tw, { styled } from "twin.macro"
+import { Link } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
+import PropTypes from "prop-types"
 
-const StyledHeader = tw.header`
+import MobileNav from "./mobile-nav"
+import { InternalLink } from "./links"
+import { InternalLinkButton } from "./buttons"
+
+const NavLink = styled(InternalLink)`
+  ${tw`mr-8`}
+`
+
+const HeaderContainer = tw.header`
   pt-2 mobile:px-8 px-20 mobile:static fixed mobile:top-auto top-0 w-full bg-white z-50 bg-opacity-90
 `
 
-const StyledNav = tw.nav`
+const NavContainer = tw.nav`
   flex justify-between items-center text-lg
 `
 const DesktopNav = tw.div`
@@ -20,27 +24,21 @@ const DesktopNav = tw.div`
 `
 
 const Header = ({ navLinks }) => {
-  const data = useStaticQuery(graphql`
-    query LogoQuery {
-      file(relativePath: { eq: "resinde-logo-square.png" }) {
-        childImageSharp {
-          # Specify the image processing specifications right in the query.
-          fixed(width: 70, height: 70) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-    }
-  `)
-
-  const colors = ["magenta", "purple", "blue", "yellow"]
+  const colors = ["pink", "purple", "blue", "yellow"]
 
   return (
-    <StyledHeader>
-      <StyledNav>
+    <HeaderContainer>
+      <NavContainer>
         <div>
           <Link to="/">
-            <Img fixed={data.file.childImageSharp.fixed} alt="ResInDe logo" />
+            <StaticImage
+              src="../images/logos/resinde-logo-square.png"
+              alt="ResInDe logo"
+              backgroundColor="transparent"
+              placeholder="blurred"
+              width={70}
+              height={70}
+            />
           </Link>
         </div>
         <MobileNav navLinks={navLinks} />
@@ -48,9 +46,13 @@ const Header = ({ navLinks }) => {
           {navLinks.map((item, index) => {
             if (item.name === "Contact Us") {
               return (
-                <Button to="/contact" key={item.name} magenta="true">
+                <InternalLinkButton
+                  to="/contact"
+                  key={item.name}
+                  pink="true"
+                >
                   Contact Us
-                </Button>
+                </InternalLinkButton>
               )
             } else {
               let linkProps = { to: item.link }
@@ -63,8 +65,8 @@ const Header = ({ navLinks }) => {
             }
           })}
         </DesktopNav>
-      </StyledNav>
-    </StyledHeader>
+      </NavContainer>
+    </HeaderContainer>
   )
 }
 
