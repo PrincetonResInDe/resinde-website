@@ -26,10 +26,10 @@
   {
     "title": "Room Draw",
     "type": "Project",
-    "featuredImgPath": "../images/projects/",
-    "featuredImgAlt": "",
+    "featuredImgPath": "../images/projects/room-draw/prototype1.png",
+    "featuredImgAlt": "Room draw comparison page",
     "tagline": "",
-    "slug": "/work/"
+    "slug": "/work/room-draw"
   },
   {
     "title": "WhenIsGood",
