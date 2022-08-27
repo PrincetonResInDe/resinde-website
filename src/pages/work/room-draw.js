@@ -5,8 +5,8 @@ import { Fade, Slide } from "react-awesome-reveal"
 
 import Seo from "../../components/seo"
 import { H1, Quote, Subtitle, Overline1, Body } from "../../components/typography"
-import { PageContainer, PageHeader, Section2, Images, Blobs } from "../../components/containers"
-import { List, BulletedList } from "../../components/lists"
+import { PageContainer, PageHeader, Section2, Blobs } from "../../components/containers"
+import { List } from "../../components/lists"
 import BottomNav from "../../components/bottom-nav"
 import Blob1 from "../../images/blobs/blob1.svg"
 import Blob2 from "../../images/blobs/blob2.svg"
@@ -77,42 +77,6 @@ const RoomDrawPage = ({ data }) => {
             style={{
               transform: "rotate(158deg) scale(1.2)",
               margin: "0 0 36rem 76vw",
-            }}
-          />
-        </Slide>
-        <Slide direction="left" duration={750} triggerOnce>
-          <Blob2
-            fill={theme("colors.yellow.DEFAULT")}
-            style={{
-              transform: "rotate(-131deg)",
-              margin: "0 0 30rem -37vw",
-            }}
-          />
-        </Slide>
-        <Slide direction="right" duration={750} triggerOnce>
-          <Blob2
-            fill={theme("colors.blue.DEFAULT")}
-            style={{
-              transform: "rotate(60deg)",
-              margin: "0 0 42rem 68vw",
-            }}
-          />
-        </Slide>
-        <Slide direction="left" duration={750} triggerOnce>
-          <Blob1
-            fill={theme("colors.pink.DEFAULT")}
-            style={{
-              transform: "rotate(-45deg) scale(1.2)",
-              margin: "0 0 12rem -36vw",
-            }}
-          />
-        </Slide>
-        <Slide direction="right" duration={750} triggerOnce>
-          <Blob1
-            fill={theme("colors.purple.DEFAULT")}
-            style={{
-              transform: "rotate(158deg) scale(1.2)",
-              margin: "0 0 0 76vw",
             }}
           />
         </Slide>
