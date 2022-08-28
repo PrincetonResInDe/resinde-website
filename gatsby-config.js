@@ -8,7 +8,7 @@ module.exports = {
       { name: "Work", link: "/work" },
       { name: "Team", link: "/team" },
       { name: "For Students", link: "/for-students" },
-      { name: "Contact Us", link: "/contact" },
+      { name: "Apply To Join", link: "https://docs.google.com/forms/d/e/1FAIpQLSfohZVM3jJ_RzY5isGpVzXTjtDYfpHSpeKu0JuwJfvyvxACZw/viewform?usp=sf_link" },
     ],
   },
   plugins: [
