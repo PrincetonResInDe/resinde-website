@@ -6,7 +6,7 @@ import PropTypes from "prop-types"
 
 import MobileNav from "./mobile-nav"
 import { InternalLink } from "./links"
-import { InternalLinkButton } from "./buttons"
+import { ExternalLinkButton } from "./buttons"
 
 const NavLink = styled(InternalLink)`
   ${tw`mr-8`}
@@ -44,15 +44,16 @@ const Header = ({ navLinks }) => {
         <MobileNav navLinks={navLinks} />
         <DesktopNav>
           {navLinks.map((item, index) => {
-            if (item.name === "Contact Us") {
+            if (item.name === "Apply To Join") {
               return (
-                <InternalLinkButton
-                  to="/contact"
+                <ExternalLinkButton
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSfohZVM3jJ_RzY5isGpVzXTjtDYfpHSpeKu0JuwJfvyvxACZw/viewform?usp=sf_link"
+                  target="_blank"
                   key={item.name}
                   pink="true"
                 >
-                  Contact Us
-                </InternalLinkButton>
+                  Apply To Join
+                </ExternalLinkButton>
               )
             } else {
               let linkProps = { to: item.link }
