@@ -13,7 +13,7 @@ import {
   Blobs,
 } from "../components/containers"
 import { InternalLinkButton } from "../components/buttons"
-import { InternalLink } from "../components/links"
+import { ExternalLink, InternalLink } from "../components/links"
 import { Carousel, CarouselItem } from "../components/carousel"
 import { BulletedList } from "../components/lists"
 import Blob2 from "../images/blobs/blob2.svg"
@@ -37,6 +37,11 @@ const HeroContent = styled.div`
 
 const HeroAction = styled(InternalLink)`
   ${tw`text-pink font-bold`}
+  font-size: 1.125rem;
+`
+
+const HeroLink = styled(ExternalLink)`
+  ${tw`text-purple font-bold`}
   font-size: 1.125rem;
 `
 
@@ -97,6 +102,9 @@ const IndexPage = ({ data }) => {
             <HeroAction to="/work" pink="true">
               Check out our recent work →
             </HeroAction>
+            <HeroLink href="https://docs.google.com/forms/d/e/1FAIpQLSfohZVM3jJ_RzY5isGpVzXTjtDYfpHSpeKu0JuwJfvyvxACZw/viewform?usp=sf_link" purple="true" target="_blank">
+              Apply to join our team →
+            </HeroLink>
           </Fade>
         </HeroContent>
         <HeroArrow to="#about-us">
